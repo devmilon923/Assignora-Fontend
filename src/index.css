@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+html {
+  overflow-y: scroll;
+}
+
+.active {
+  color: #0e9f6e !important;
+  background-color: transparent !important;
+}
+/* .active:active {
+  background-color: transparent !important;
+} */
