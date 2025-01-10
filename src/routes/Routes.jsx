@@ -6,6 +6,7 @@ import Main from "../layouts/Main";
 import Home from "../pages/Home";
 
 import AssignmentDetails from "../components/AssignmentDetails";
+import Setting from "../components/auth/Setting";
 import GiveMarks from "../components/GiveMarks";
 import Assignments from "../pages/Assignments";
 import CreateAssignment from "../pages/CreateAssignment";
@@ -67,6 +68,14 @@ export const router = createBrowserRouter([
         element: (
           <PrivateRoute>
             <MyAttempted />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/setting",
+        element: (
+          <PrivateRoute>
+            <Setting />
           </PrivateRoute>
         ),
       },

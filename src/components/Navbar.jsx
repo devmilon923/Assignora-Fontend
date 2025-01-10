@@ -17,14 +17,6 @@ export default function Navbar() {
           Assignments
         </NavLink>
       </div>
-      <div>
-        <NavLink
-          className="hover:bg-transparent dark:text-gray-300 font-semibold transition-all duration-200 hover:focus:bg-transparent hover:text-[#0e9f6e]"
-          to={"/assignments-pending"}
-        >
-          Pending Assignments
-        </NavLink>
-      </div>
     </>
   );
   useEffect(() => {
@@ -136,7 +128,12 @@ export default function Navbar() {
                     <NavLink to={"/my-attempted"}>My Attempted</NavLink>
                   </div>
                   <div>
-                    <a>Settings</a>
+                    <NavLink to={"/assignments-pending"}>
+                      Pending Assignments
+                    </NavLink>
+                  </div>
+                  <div>
+                    <NavLink to={"/setting"}>Settings</NavLink>
                   </div>
                 </ul>
               </div>

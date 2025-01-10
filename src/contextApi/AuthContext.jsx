@@ -1,10 +1,13 @@
 import {
   createUserWithEmailAndPassword,
+  EmailAuthProvider,
   GoogleAuthProvider,
   onAuthStateChanged,
+  reauthenticateWithCredential,
   signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
+  updatePassword,
   updateProfile,
 } from "firebase/auth";
 
@@ -63,6 +66,16 @@ export const AuthContextProvider = ({ children }) => {
     return signOut(auth);
   };
 
+  // change password
+  const changePassword = async (newPassword, currentPassword) => {
+    const credential = EmailAuthProvider.credential(
+      auth.currentUser.email,
+      currentPassword
+    );
+    await reauthenticateWithCredential(auth.currentUser, credential);
+    return updatePassword(auth.currentUser, newPassword);
+  };
+
   return (
     <AuthContext.Provider
       value={{
@@ -73,6 +86,7 @@ export const AuthContextProvider = ({ children }) => {
         profileUpdate,
         logout,
         loading,
+        changePassword,
       }}
     >
       {children}
