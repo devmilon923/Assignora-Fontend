@@ -68,7 +68,7 @@ export default function Navbar() {
               className="btn btn-ghost pl-0 lg:hidden"
             >
               {/* className="h-5 w-5" */}
-              <i class="fa-solid fa-bars text-xl dark:text-gray-400"></i>
+              <i className="fa-solid fa-bars text-xl dark:text-gray-400"></i>
             </div>
             <ul
               tabIndex={0}

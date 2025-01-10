@@ -1,6 +1,23 @@
+import { useQuery } from "@tanstack/react-query";
+import axios from "axios";
 import React from "react";
 
 export default function LeaderBoard() {
+  const { data: topUser, isPending } = useQuery({
+    queryKey: "topUser",
+    queryFn: async () => {
+      const res = await axios.get(
+        `${import.meta.env.VITE_API}/assignment/top-user`
+      );
+      return res.data.data;
+    },
+  });
+  if (isPending)
+    return (
+      <div className="w-full  flex items-center justify-center">
+        <img className="w-12" src="/loader.gif" alt="" />
+      </div>
+    );
   return (
     <div>
       <section className="leaderboard bg-white dark:bg-gray-800 p-6 dark:border-slate-900 rounded-lg shadow-sm border">
@@ -8,34 +25,30 @@ export default function LeaderBoard() {
           Leaderboard
         </h2>
         <ul>
-          <li className="flex justify-between py-2 border-b dark:border-b-slate-700">
-            <span className="font-medium dark:text-gray-300">Amelia Rose</span>
-            <span className="text-green-500">95%</span>
-          </li>
-          <li className="flex justify-between py-2 border-b dark:border-b-slate-700">
-            <span className="font-medium dark:text-gray-300">Jane Smith</span>
-            <span className="text-green-500">93%</span>
-          </li>
-          <li className="flex justify-between py-2 border-b dark:border-b-slate-700">
-            <span className="font-medium dark:text-gray-300">Daisy Jade</span>
-            <span className="text-green-500">92%</span>
-          </li>
-          <li className="flex justify-between py-2 border-b dark:border-b-slate-700">
-            <span className="font-medium dark:text-gray-300">Fern Dell</span>
-            <span className="text-green-500">91%</span>
-          </li>
-          <li className="flex justify-between py-2 border-b dark:border-b-slate-700">
-            <span className="font-medium dark:text-gray-300">Laura Beth</span>
-            <span className="text-green-500">89%</span>
-          </li>
-          <li className="flex justify-between py-2 border-b dark:border-b-slate-700">
-            <span className="font-medium dark:text-gray-300">Harper Lynn</span>
-            <span className="text-green-500">88%</span>
-          </li>
-          <li className="flex justify-between py-2">
-            <span className="font-medium dark:text-gray-300">Olive Ann</span>
-            <span className="text-green-500">86%</span>
-          </li>
+          {topUser.length
+            ? topUser.map((user, index) => (
+                <li
+                  key={index}
+                  className="flex justify-between py-2 border-b dark:border-b-slate-700"
+                >
+                  <span className="font-medium dark:text-gray-300 flex items-center gap-2">
+                    <img
+                      className="w-9 h-9 object-cover rounded-full"
+                      src={
+                        user.photo
+                          ? user.photo
+                          : "https://templates.joomla-monster.com/joomla30/jm-news-portal/components/com_djclassifieds/assets/images/default_profile.png"
+                      }
+                      alt=""
+                    />
+                    {user.name}
+                  </span>
+                  <span className="text-green-500 flex items-center">
+                    {user.totalMarks}
+                  </span>
+                </li>
+              ))
+            : "No user found"}
         </ul>
       </section>
     </div>

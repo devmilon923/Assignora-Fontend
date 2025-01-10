@@ -30,9 +30,10 @@ export const AuthContextProvider = ({ children }) => {
           setLoading(false);
         }
       } else {
+        setLoading(false);
+        console.log(import.meta.env.VITE_API);
         await api.get(`/auth/logout`);
         setUser(null);
-        setLoading(false);
       }
     });
     return () => close();
