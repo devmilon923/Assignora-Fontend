@@ -7,7 +7,9 @@ import Home from "../pages/Home";
 
 import AssignmentDetails from "../components/AssignmentDetails";
 import Setting from "../components/auth/Setting";
+import UserProfile from "../components/auth/UserProfile";
 import GiveMarks from "../components/GiveMarks";
+import ResetPassword from "../components/ResetPassword";
 import Assignments from "../pages/Assignments";
 import CreateAssignment from "../pages/CreateAssignment";
 import MyAttempted from "../pages/MyAttempted";
@@ -56,6 +58,14 @@ export const router = createBrowserRouter([
         ),
       },
       {
+        path: "/profile",
+        element: (
+          <PrivateRoute>
+            <UserProfile />
+          </PrivateRoute>
+        ),
+      },
+      {
         path: "/assignments-update/:id",
         element: (
           <PrivateRoute>
@@ -70,6 +80,10 @@ export const router = createBrowserRouter([
             <MyAttempted />
           </PrivateRoute>
         ),
+      },
+      {
+        path: "/auth/reset-password",
+        element: <ResetPassword />,
       },
       {
         path: "/setting",

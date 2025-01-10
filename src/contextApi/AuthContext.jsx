@@ -4,6 +4,7 @@ import {
   GoogleAuthProvider,
   onAuthStateChanged,
   reauthenticateWithCredential,
+  sendPasswordResetEmail,
   signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
@@ -65,7 +66,10 @@ export const AuthContextProvider = ({ children }) => {
   const logout = async () => {
     return signOut(auth);
   };
-
+  // send reset password email
+  const resetPassword = async (email) => {
+    return sendPasswordResetEmail(auth, email);
+  };
   // change password
   const changePassword = async (newPassword, currentPassword) => {
     const credential = EmailAuthProvider.credential(
@@ -87,6 +91,7 @@ export const AuthContextProvider = ({ children }) => {
         logout,
         loading,
         changePassword,
+        resetPassword,
       }}
     >
       {children}

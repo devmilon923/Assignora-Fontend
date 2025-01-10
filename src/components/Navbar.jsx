@@ -117,7 +117,9 @@ export default function Navbar() {
                   className="menu menu-sm dark:shadow-sm dark:bg-slate-900  dark:text-gray-400 dropdown-content gap-2 bg-base-100 rounded-box z-[1] mt-3 w-64 p-4 shadow"
                 >
                   <div>
-                    <a className="justify-between">Profile</a>
+                    <NavLink to={"/profile"} className="justify-between">
+                      Profile
+                    </NavLink>
                   </div>
                   <div>
                     <NavLink to={"/assignments-create"}>

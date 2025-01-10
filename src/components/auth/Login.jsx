@@ -1,11 +1,4 @@
-import {
-  Button,
-  Card,
-  Checkbox,
-  Label,
-  Spinner,
-  TextInput,
-} from "flowbite-react";
+import { Button, Card, Label, Spinner, TextInput } from "flowbite-react";
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
@@ -55,9 +48,8 @@ export default function Login() {
             </div>
             <TextInput id="password" type="password" name="password" required />
           </div>
-          <div className="flex items-center gap-2">
-            <Checkbox id="remember" />
-            <Label htmlFor="remember">Remember me</Label>
+          <div className="flex text-sm hover:underline items-center gap-2">
+            <Link to={"/auth/reset-password"}>Forget Password</Link>
           </div>
 
           <Button type="submit">
