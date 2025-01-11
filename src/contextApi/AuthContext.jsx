@@ -92,6 +92,7 @@ export const AuthContextProvider = ({ children }) => {
         loading,
         changePassword,
         resetPassword,
+        setUser,
       }}
     >
       {children}

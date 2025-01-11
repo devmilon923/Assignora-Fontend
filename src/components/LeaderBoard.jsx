@@ -4,7 +4,7 @@ import React from "react";
 
 export default function LeaderBoard() {
   const { data: topUser, isPending } = useQuery({
-    queryKey: "topUser",
+    queryKey: ["topUser"],
     queryFn: async () => {
       const res = await axios.get(
         `${import.meta.env.VITE_API}/assignment/top-user`
