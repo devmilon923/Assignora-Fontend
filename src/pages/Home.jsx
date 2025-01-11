@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import Banner from "../components/Banner";
 import FAQSection from "../components/FAQSection";
 import Features from "../components/Features";
+import HowItWorks from "../components/HowItWorks";
 import LeaderBoard from "../components/LeaderBoard";
 
 export default function Home() {
@@ -18,6 +19,9 @@ export default function Home() {
       </div>
       <div className="md:pb-12 pb-6">
         <LeaderBoard />
+      </div>
+      <div className="md:pb-12 pb-6">
+        <HowItWorks />
       </div>
       <div className="md:pb-12 py-6">
         <FAQSection />

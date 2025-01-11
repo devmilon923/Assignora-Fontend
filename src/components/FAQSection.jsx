@@ -51,7 +51,9 @@ export default function FAQSection() {
               <div className="py-5" key={index}>
                 <details className="group">
                   <summary className="flex cursor-pointer list-none items-center justify-between font-medium">
-                    <span className="dark:text-white">{item.question}</span>
+                    <span className="dark:text-white text-start">
+                      {item.question}
+                    </span>
                     <span className="transition group-open:rotate-180">
                       <svg
                         fill="none"

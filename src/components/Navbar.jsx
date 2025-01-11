@@ -95,7 +95,7 @@ export default function Navbar() {
                   await logout();
                   toast.success("Logout success");
                 }}
-                className="btn btn-sm bg-red-500 dark:bg-red-700 dark:border-slate-900 hover:bg-red-600 text-white rounded-md"
+                className="btn btn-sm border-red-400 bg-red-50  dark:bg-red-100 hover:text-white hover:dark:text-red-600 dark:border-slate-900 hover:bg-red-500 rounded-md"
               >
                 Logout
               </Link>
