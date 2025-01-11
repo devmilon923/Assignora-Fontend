@@ -1,5 +1,5 @@
 import React from "react";
-
+import svg from "./../assets/features.svg";
 export default function Features() {
   return (
     <div>
@@ -15,7 +15,7 @@ export default function Features() {
           <div className="order-2 lg:order-1">
             <img
               className="w-full hidden xl:block mx-auto"
-              src="/features.svg"
+              src={svg}
               alt="features"
             />
           </div>
