@@ -30,7 +30,7 @@ export default function AssignmentCard({ assignment }) {
       toast.success("Assignment deleted");
     } catch (error) {
       setBtnLoading(false);
-      console.log(error);
+    
     }
   };
   return (

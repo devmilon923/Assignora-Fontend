@@ -20,7 +20,7 @@ export default function GiveMarks() {
       return toast.success("Marks submited");
     } catch (error) {
       setBtnLoading(false);
-      console.log(error);
+    
       return toast.error(error.response.data.message);
     }
   };

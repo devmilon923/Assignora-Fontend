@@ -1,11 +1,33 @@
-import React from "react";
+import axios from "axios";
+import { Spinner } from "flowbite-react";
+import React, { useEffect, useState } from "react";
+import toast from "react-hot-toast";
 
 export default function ContactUs() {
+  const [btnLoading, setBtnLoading] = useState(false);
   const handleForm = async (e) => {
+    setBtnLoading(true);
     e.preventDefault();
+    const formData = new FormData(e.target);
+    const object = Object.fromEntries(formData.entries());
+    try {
+      await axios.post(
+        `${import.meta.env.VITE_API}/auth/contact-email`,
+        object
+      );
+      setBtnLoading(false);
+      return toast.success("Email send successfully");
+    } catch (error) {
+      setBtnLoading(false);
+    
+      return toast.error("Email send Failed");
+    }
   };
+  useEffect(() => {
+    document.title = "Contact Us | Assignora";
+  }, []);
   return (
-    <section className="py-16 bg-gray-100 dark:bg-slate-800">
+    <section className="py-16 bg-gray-50 dark:bg-slate-800 rounded-md">
       <div className="container mx-auto px-3 lg:px-20">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-gray-800 dark:text-gray-100 mb-4">
@@ -16,7 +38,7 @@ export default function ContactUs() {
             feel free to reach out to us using the form below.
           </p>
         </div>
-        <div className="max-w-3xl mx-auto bg-white dark:bg-gray-700 p-4 rounded-lg shadow-lg">
+        <div className="max-w-3xl mx-auto bg-white dark:bg-gray-700 p-4 md:p-6 rounded-lg shadow-lg">
           <form onSubmit={handleForm}>
             <div className="grid grid-cols-1 gap-6">
               <div>
@@ -69,6 +91,13 @@ export default function ContactUs() {
                   type="submit"
                   className="btn bg-neutral hover:bg-neutral-700 text-white mt-4 px-6 py-3 rounded-lg"
                 >
+                  {btnLoading && (
+                    <Spinner
+                      className="mr-1"
+                      aria-label="Alternate spinner button example"
+                      size="sm"
+                    />
+                  )}{" "}
                   Send Message
                 </button>
               </div>

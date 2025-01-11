@@ -40,7 +40,7 @@ export default function UpdateAssignment() {
     e.preventDefault();
     const now = new Date();
     if (startDate <= now) return toast.error("Due date must be in the future");
-    // return console.log(e.target.photo.files?.size);
+
     const formData = new FormData(e.target);
     const FormObject = Object.fromEntries(formData.entries());
     if (e.target.photo.files.length <= 0) {
@@ -51,14 +51,13 @@ export default function UpdateAssignment() {
         thumbnail: assignment.thumbnail,
         marks: parseInt(filterData.marks),
       };
-      // return console.log(data);
+
       try {
         await api.post(`/assignment/update/${id}`, data);
         e.target.reset();
 
         return toast.success("Assignment updated");
       } catch (error) {
-        console.log(error.message);
         return toast.success("Assignment not updated");
       }
     }
@@ -71,18 +70,15 @@ export default function UpdateAssignment() {
       thumbnail: url,
       marks: parseInt(filterData.marks),
     };
-    // return console.log(data);
+
     try {
       await api.post(`/assignment/update/${id}`, data);
       e.target.reset();
 
       return toast.success("Assignment updated");
     } catch (error) {
-      console.log(error.message);
       return toast.success("Assignment not updated");
     }
-
-    // console.log(startDate);
   };
   return (
     <div className="">

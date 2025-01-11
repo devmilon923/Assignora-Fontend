@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import community from "./../assets/Community.svg";
 export default function About() {
+  useEffect(() => {
+    document.title = "About Us | Assignora";
+  }, []);
   return (
     <section className="py-16 bg-gray-50 rounded-md dark:bg-slate-800">
       <div className="container mx-auto px-6 lg:px-20">

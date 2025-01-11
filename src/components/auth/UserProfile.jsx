@@ -19,8 +19,7 @@ const UserProfile = () => {
       return res.data.data;
     },
   });
-  console.log(profile);
-  console.log(error);
+
   const handleSubmit = async (e) => {
     setBtnLoading(true);
     e.preventDefault();
@@ -44,7 +43,7 @@ const UserProfile = () => {
         return toast.success("Profile update successfully");
       } catch (error) {
         setBtnLoading(false);
-        console.log(error.message);
+
         return toast.error("Failed to update");
       }
     } else {
@@ -60,7 +59,7 @@ const UserProfile = () => {
         return toast.success("Profile update successfully");
       } catch (error) {
         setBtnLoading(false);
-        console.log(message);
+   
         return toast.error("Failed to update");
       }
     }

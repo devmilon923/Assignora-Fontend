@@ -52,7 +52,7 @@ export default function CreateAssignment() {
       setBtnLoading(false);
       return toast.success("Assignment created");
     } catch (error) {
-      console.log(error.message);
+
       setBtnLoading(false);
       return toast.success("Assignment not created");
     }

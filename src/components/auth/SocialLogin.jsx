@@ -18,7 +18,7 @@ export default function SocialLogin() {
         uid: result.user.uid,
         email: result.user.email,
       });
-      // console.log(res.data.data._id);
+    
       const payload = {
         name: res.data.data.name,
         uid: res.data.data.uid,
@@ -27,7 +27,7 @@ export default function SocialLogin() {
       setBtnLoading(false);
       return toast.success("Welcome!");
     } catch (error) {
-      console.log(error);
+    
       setBtnLoading(false);
       return toast.error(error.code);
     }

@@ -1,14 +1,21 @@
+import { Link } from "react-router-dom";
+
 export default function Footer() {
   return (
     <div className="bg-base-200 dark:bg-slate-950">
       <footer className="footer container mx-auto footer-center  text-base-content rounded p-10">
         <nav className="grid grid-flow-col gap-4 dark:text-gray-400">
-          <a className="link link-hover">About us</a>
-          <a className="link link-hover">Contact</a>
-          <a className="link link-hover">Jobs</a>
-          <a className="link link-hover">Press kit</a>
+          <Link to={"/about-us"} className="link link-hover">
+            About us
+          </Link>
+          <Link to={"/contact-us"} className="link link-hover">
+            Contact
+          </Link>
+          <Link to={"/assignments"} className="link link-hover">
+            Assignments
+          </Link>
         </nav>
-        <nav>
+        {/* <nav>
           <div className="grid grid-flow-col gap-4">
             <a className="cursor-pointer hover:text-gray-400">
               <svg
@@ -44,7 +51,7 @@ export default function Footer() {
               </svg>
             </a>
           </div>
-        </nav>
+        </nav> */}
         <aside>
           <p className="dark:text-gray-500">
             Copyright © {new Date().getFullYear()} - All right reserved by

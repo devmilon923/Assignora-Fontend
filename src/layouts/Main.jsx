@@ -15,7 +15,7 @@ export default function Main() {
     <div className="dark:bg-slate-900">
       <Toaster position="top-right" reverseOrder={false} />
       <Navbar />
-      <div className="pt-24 pb-12  container mx-auto px-2 min-h-[calc(100vh-230px)]">
+      <div className="pt-24 pb-12  container mx-auto px-2 min-h-[calc(100vh-160px)]">
         <Outlet />
       </div>
       <Footer />

@@ -48,13 +48,12 @@ export default function Assignments() {
       setSearchLoading(false);
       return setAssignment(res.data.data);
     } catch (error) {
-      setSearchLoading(false);
-      return console.log(error);
+      return setSearchLoading(false);
     }
   };
   const difficultSearch = async (e) => {
     setSearchLoading(true);
-    console.log(e.target.value);
+   
     try {
       const res = await api.get(
         `/assignment/search/difficulty/${e.target.value}`
@@ -62,8 +61,8 @@ export default function Assignments() {
       setSearchLoading(false);
       return setAssignment(res.data.data);
     } catch (error) {
-      setSearchLoading(false);
-      return console.log(error);
+      return setSearchLoading(false);
+  
     }
   };
   return (
