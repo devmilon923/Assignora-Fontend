@@ -10,7 +10,9 @@ import Setting from "../components/auth/Setting";
 import UserProfile from "../components/auth/UserProfile";
 import GiveMarks from "../components/GiveMarks";
 import ResetPassword from "../components/ResetPassword";
+import About from "../pages/About";
 import Assignments from "../pages/Assignments";
+import ContactUs from "../pages/ContactUs";
 import CreateAssignment from "../pages/CreateAssignment";
 import MyAttempted from "../pages/MyAttempted";
 import NotFound404 from "../pages/NotFound404";
@@ -40,6 +42,14 @@ export const router = createBrowserRouter([
       {
         path: "/assignments",
         element: <Assignments />,
+      },
+      {
+        path: "/about-us",
+        element: <About />,
+      },
+      {
+        path: "/contact-us",
+        element: <ContactUs />,
       },
       {
         path: "/assignments-details/:id",

@@ -20,7 +20,7 @@ export default function LeaderBoard() {
     );
   return (
     <div>
-      <section className="leaderboard bg-white dark:bg-gray-800 p-6 dark:border-slate-900 rounded-lg shadow-sm border">
+      <section className="leaderboard bg-white dark:bg-slate-800 p-6 dark:border-slate-900 rounded-lg shadow-sm border">
         <h2 className="lg:text-2xl dark:text-gray-400 text-xl font-bold text-primary-800 mb-4 text-center">
           Leaderboard
         </h2>
@@ -43,7 +43,10 @@ export default function LeaderBoard() {
                     />
                     {user.name}
                   </span>
-                  <span className="text-green-500 flex items-center">
+                  <span
+                    id="howitworks"
+                    className="text-green-500 flex items-center"
+                  >
                     {user.totalMarks}
                   </span>
                 </li>

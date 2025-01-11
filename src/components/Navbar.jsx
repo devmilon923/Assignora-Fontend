@@ -17,6 +17,31 @@ export default function Navbar() {
           Assignments
         </NavLink>
       </div>
+      <div>
+        <NavLink
+          className="hover:bg-transparent dark:text-gray-300 font-semibold transition-all duration-200 hover:focus:bg-transparent hover:text-[#0e9f6e]"
+          to={"/about-us"}
+        >
+          About Us
+        </NavLink>
+      </div>
+
+      <div>
+        <a
+          href="#howitworks"
+          className="hover:bg-transparent dark:text-gray-300 font-semibold transition-all duration-200 hover:focus:bg-transparent hover:text-[#0e9f6e]"
+        >
+          How it Work
+        </a>
+      </div>
+      <div>
+        <NavLink
+          className="hover:bg-transparent dark:text-gray-300 font-semibold transition-all duration-200 hover:focus:bg-transparent hover:text-[#0e9f6e]"
+          to={"/contact-us"}
+        >
+          Contact Us
+        </NavLink>
+      </div>
     </>
   );
   useEffect(() => {
@@ -64,7 +89,7 @@ export default function Navbar() {
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow gap-5"
+              className="menu menu-sm dropdown-content px-4 bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow gap-5"
             >
               {links}
             </ul>

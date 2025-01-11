@@ -2,7 +2,7 @@ import React from "react";
 
 export default function HowItWorks() {
   return (
-    <section className="bg-gray-50 dark:bg-gray-800 py-12 rounded-md">
+    <section className="bg-gray-50 dark:bg-slate-800 py-12 rounded-md">
       <div className="container mx-auto text-center px-4">
         <h2 className="text-2xl font-bold text-gray-800 dark:text-gray-100 mb-8">
           How It Works
