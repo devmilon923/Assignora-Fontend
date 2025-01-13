@@ -19,7 +19,7 @@ export default function ContactUs() {
       return toast.success("Email send successfully");
     } catch (error) {
       setBtnLoading(false);
-    
+
       return toast.error("Email send Failed");
     }
   };
@@ -51,6 +51,7 @@ export default function ContactUs() {
                 <input
                   type="text"
                   id="name"
+                  required
                   name="name"
                   placeholder="John Doe"
                   className="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-gray-50 dark:bg-gray-800 text-gray-800 dark:text-gray-100"
@@ -67,6 +68,7 @@ export default function ContactUs() {
                   type="email"
                   id="email"
                   name="email"
+                  required
                   placeholder="johndoe@example.com"
                   className="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-gray-50 dark:bg-gray-800 text-gray-800 dark:text-gray-100"
                 />
@@ -82,6 +84,7 @@ export default function ContactUs() {
                   id="message"
                   name="message"
                   rows="5"
+                  required
                   placeholder="Your message here..."
                   className="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-gray-50 dark:bg-gray-800 text-gray-800 dark:text-gray-100"
                 ></textarea>

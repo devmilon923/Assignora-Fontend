@@ -89,7 +89,7 @@ export default function Navbar() {
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content px-4 bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow gap-5"
+              className="menu menu-sm dropdown-content px-4 bg-base-100 dark:bg-slate-900 rounded-box z-[1] mt-3 w-52 p-2 shadow gap-5"
             >
               {links}
             </ul>
@@ -101,7 +101,9 @@ export default function Navbar() {
           </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1 gap-5">{links}</ul>
+          <ul className="menu menu-horizontal px-1 gap-5 dark:bg-slate-900">
+            {links}
+          </ul>
         </div>
         <div className="navbar-end gap-2">
           <button onClick={toggleDarkMode}>
